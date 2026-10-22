@@ -4,7 +4,7 @@
 
 namespace IsuDev\Reviews\Vendor\Composer\Autoload;
 
-class ComposerStaticInitb258c18dbbeaf6a5605f0796a135c92c
+class ComposerStaticInit270d6e1268a3e2077a43e00b172a6869
 {
     public static $files = array (
         '197163058a0017d97a2a66e71973f11c' => __DIR__ . '/..' . '/yahnis-elsts/plugin-update-checker/load-v5p7.php',
@@ -23,7 +23,7 @@ class ComposerStaticInitb258c18dbbeaf6a5605f0796a135c92c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInitb258c18dbbeaf6a5605f0796a135c92c::$classMap;
+            $loader->classMap = ComposerStaticInit270d6e1268a3e2077a43e00b172a6869::$classMap;
 
         }, null, ClassLoader::class);
     }

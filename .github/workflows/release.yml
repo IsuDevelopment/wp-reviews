@@ -81,6 +81,7 @@ jobs:
           test -f "$ROOT/readme.txt"
           test -f "$ROOT/vendor-prefixed/autoload.php"
           test -f "$ROOT/vendor-prefixed/yahnis-elsts/plugin-update-checker/load-v5p7.php"
+          test -f "$ROOT/vendor-prefixed/yahnis-elsts/plugin-update-checker/vendor/Parsedown.php"
           test -f "$ROOT/build/blocks-manifest.php"
           test -f "$ROOT/assets/demo/reviews.json"
           if unzip -l "isudev-reviews-${VERSION}.zip" | grep -E ' isudev-reviews/(\.git|\.github|\.agents|node_modules|src|bin)/| isudev-reviews/(AGENTS\.md|CLAUDE\.md|composer\.json|composer\.lock|package\.json|package-lock\.json)$'; then

@@ -74,6 +74,7 @@ SDK errors are `isurev_api_<code>` where `<code>` is the platform's error code. 
 | Source synced but no new reviews | Free re-fetches the newest 8 and dedupes; `cached: true` within 7 days | Expected |
 | Block shows nothing | All reviews hidden, `minRating` too high, `withText` filter, wrong `sourceIds`, or `build/` missing | Check attributes; `npm run build` |
 | Pro template renders as Classic | No `pro_templates` feature | Expected without Pro (`Templates::resolve`) |
+| Updater fatal `Class "Parsedown" not found` | Plugin Update Checker's own `vendor/` folder missing (an unanchored `vendor/` in `.gitignore` dropped it before 0.3.1) | `.gitignore` uses `/vendor/`; CI fails on untracked files in `vendor-prefixed/` |
 | Cron never syncs | No `auto_sync`, interval `off`, or WP-Cron disabled | `wp cron event list`, `wp isurev sources` (interval) |
 
 Find the place ID of a Google business: Google's Place ID finder, or the `place_id` in a Maps URL.

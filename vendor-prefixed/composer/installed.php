@@ -4,7 +4,7 @@
     'name' => 'isudev/reviews',
     'pretty_version' => 'dev-main',
     'version' => 'dev-main',
-    'reference' => '86747e6355991131a4857d038ab38dbfa3daf90c',
+    'reference' => '8a85ff1ebcad888dd5d2205b7c7b160d69497159',
     'type' => 'wordpress-plugin',
     'install_path' => __DIR__ . '/../',
     'aliases' => 

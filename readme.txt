@@ -4,7 +4,7 @@ Tags: reviews, google reviews, facebook reviews, testimonials, block
 Requires at least: 6.9
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 0.3.0
+Stable tag: 0.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,9 @@ The cloud import needs a publicly reachable site: the isuDev API verifies the do
 Updates arrive from GitHub releases through the built-in updater. Define `ISUREV_DISABLE_SELF_UPDATES` as `true` or use the `isurev_self_updates_enabled` filter to turn this off.
 
 == Changelog ==
+
+= 0.3.1 =
+* Fix: the updater's Markdown parser was missing from the package, so checking GitHub for updates failed.
 
 = 0.3.0 =
 * Free import: the 8 newest reviews, 4 imports per 30 days per site. Re-importing the same place within 7 days is free.

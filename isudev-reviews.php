@@ -3,7 +3,7 @@
  * Plugin Name:       IsuDev Reviews
  * Plugin URI:        https://isudev.com/plugins/reviews/
  * Description:       Google and Facebook reviews stored locally and shown with Gutenberg blocks. Free quick import, Pro auto-sync and templates.
- * Version:           0.3.0
+ * Version:           0.3.1
  * Requires at least: 6.9
  * Requires PHP:      8.2
  * Author:            IsuDev
@@ -21,7 +21,7 @@ namespace IsuDev\Reviews;
 
 defined( 'ABSPATH' ) || exit;
 
-const VERSION = '0.3.0';
+const VERSION = '0.3.1';
 const FILE    = __FILE__;
 const DIR     = __DIR__;
 

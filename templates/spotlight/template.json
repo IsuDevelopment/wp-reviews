@@ -1,0 +1,6 @@
+{
+	"title": "Spotlight",
+	"description": "Large quote on a soft tinted panel with the author at the bottom. Made for hero sections.",
+	"tier": "pro",
+	"layouts": [ "grid", "slider" ]
+}

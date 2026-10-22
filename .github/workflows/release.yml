@@ -1,0 +1,113 @@
+name: Build & Release
+
+# Push a tag vX.Y.Z (or run manually) after bumping the version in isudev-reviews.php
+# (header + const VERSION), readme.txt (Stable tag + changelog) and package.json.
+# The ZIP is the package.json "files" list; the built-in updater installs it from the release.
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and release plugin
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read and validate version
+        id: version
+        run: |
+          VERSION=$(grep -m1 'Version:' isudev-reviews.php | awk '{print $NF}' | tr -d '[:space:]')
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
+          grep -Eq "^const VERSION = '$VERSION';" isudev-reviews.php
+          grep -q "^Stable tag: $VERSION$" readme.txt
+          grep -q "^= $VERSION =$" readme.txt
+          test "$(jq -r .version package.json)" = "$VERSION"
+
+      - name: Assert pushed tag matches version
+        if: github.ref_type == 'tag'
+        run: test "${{ github.ref_name }}" = "${{ steps.version.outputs.tag }}"
+
+      - name: Create release tag for manual run
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          git fetch --tags --force
+          if git show-ref --tags --verify --quiet "refs/tags/${RELEASE_TAG}"; then
+            test "$(git rev-list -n1 "${RELEASE_TAG}")" = "${GITHUB_SHA}"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git tag "${RELEASE_TAG}" "${GITHUB_SHA}"
+            git push origin "${RELEASE_TAG}"
+          fi
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Build block
+        run: |
+          npm ci
+          npm run build
+
+      - name: Build plugin ZIP
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          mkdir -p dist/isudev-reviews
+          jq -r '.files[]' package.json | rsync -a --files-from=- --recursive ./ dist/isudev-reviews/
+          cd dist && zip -rq "../isudev-reviews-${VERSION}.zip" isudev-reviews
+
+      - name: Assert artifact contents
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          ROOT=dist/isudev-reviews
+          test -f "$ROOT/isudev-reviews.php"
+          test -f "$ROOT/readme.txt"
+          test -f "$ROOT/vendor-prefixed/autoload.php"
+          test -f "$ROOT/vendor-prefixed/yahnis-elsts/plugin-update-checker/load-v5p7.php"
+          test -f "$ROOT/build/blocks-manifest.php"
+          test -f "$ROOT/assets/demo/reviews.json"
+          if unzip -l "isudev-reviews-${VERSION}.zip" | grep -E '(/\.git/|/\.github/|/\.agents/|/AGENTS\.md$|/CLAUDE\.md$|/node_modules/|/src/|/bin/|composer\.json$|package\.json$)'; then
+            echo 'Development files leaked into the release artifact.'
+            exit 1
+          fi
+
+      - name: Extract changelog
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          awk -v v="= $VERSION =" '$0 == v { found=1; next } found && /^= [0-9]+\.[0-9]+/ { exit } found { print }' readme.txt > changelog-section.md
+          test -s changelog-section.md
+          {
+            echo '## Changelog'
+            echo
+            sed 's/^\* /- /' changelog-section.md
+            echo
+            echo '---'
+            echo
+            echo "**Install:** download \`isudev-reviews-${VERSION}.zip\` below and install it as a plugin, or let the built-in updater offer it."
+          } > release-body.md
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: v${{ steps.version.outputs.version }}
+          files: isudev-reviews-${{ steps.version.outputs.version }}.zip
+          body_path: release-body.md

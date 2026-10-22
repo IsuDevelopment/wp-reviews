@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "isudev-reviews/reviews",
+	"version": "0.1.0",
+	"title": "Reviews",
+	"category": "widgets",
+	"icon": "star-filled",
+	"description": "Google and Facebook reviews stored on this site, as a grid or carousel.",
+	"keywords": [ "reviews", "google", "facebook", "testimonials", "opinie" ],
+	"textdomain": "isudev-reviews",
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide", "full" ],
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"sourceIds": {
+			"type": "array",
+			"items": { "type": "integer" },
+			"default": []
+		},
+		"template": { "type": "string", "default": "" },
+		"layout": {
+			"type": "string",
+			"enum": [ "grid", "slider" ],
+			"default": "grid"
+		},
+		"columns": { "type": "integer", "default": 3 },
+		"limit": { "type": "integer", "default": 9 },
+		"minRating": { "type": "integer", "default": 4 },
+		"textLines": { "type": "integer", "default": 5 },
+		"showSummary": { "type": "boolean", "default": true },
+		"withText": { "type": "boolean", "default": true }
+	},
+	"example": {},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php"
+}

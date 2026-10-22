@@ -1,0 +1,166 @@
+/* isuDev Reviews admin screens. */
+.isurev-admin .isurev-panel {
+	max-width: 960px;
+	margin: 20px 0;
+	padding: 4px 24px 16px;
+	border: 1px solid #c3c4c7;
+	border-radius: 8px;
+	background: #fff;
+}
+
+.isurev-admin .isurev-sources {
+	margin-top: 16px;
+}
+
+.isurev-admin .isurev-sources td {
+	vertical-align: middle;
+}
+
+.isurev-admin .isurev-sources .isurev-platform {
+	vertical-align: middle;
+	margin-right: 4px;
+}
+
+.isurev-admin .isurev-sources__actions {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	justify-content: flex-end;
+}
+
+.isurev-admin .isurev-choices {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 24px;
+}
+
+.isurev-admin .isurev-choices label {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.isurev-admin .isurev-choices--stacked {
+	flex-direction: column;
+}
+
+.isurev-badge {
+	display: inline-block;
+	padding: 0 6px;
+	border-radius: 3px;
+	background: #dcdcde;
+	color: #1d2327;
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 18px;
+	vertical-align: middle;
+}
+
+.isurev-badge--pro {
+	background: linear-gradient(135deg, #7b5cff, #3858e9);
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.isurev-status {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 10px;
+	font-size: 12px;
+	font-weight: 500;
+	vertical-align: middle;
+}
+
+.isurev-status--ok {
+	background: #d1f0d9;
+	color: #0a5d24;
+}
+
+.isurev-status--error {
+	background: #fbe3e4;
+	color: #8a1f21;
+}
+
+.isurev-status--muted {
+	background: #f0f0f1;
+	color: #50575e;
+}
+
+.isurev-admin-author {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.isurev-admin-author .isurev-avatar {
+	width: 32px;
+	height: 32px;
+	font-size: 14px;
+}
+
+.isurev-admin .isurev-row--hidden td {
+	opacity: 0.55;
+}
+
+.isurev-admin .column-rating {
+	width: 120px;
+}
+
+.isurev-admin .column-source_id {
+	width: 180px;
+}
+
+.isurev-admin .column-published_at {
+	width: 110px;
+}
+
+/* Templates gallery. */
+.isurev-templates {
+	display: grid;
+	gap: 24px;
+	margin-top: 16px;
+}
+
+.isurev-template {
+	overflow: hidden;
+	border: 2px solid #dcdcde;
+	border-radius: 12px;
+	background: #fff;
+}
+
+.isurev-template.is-current {
+	border-color: #3858e9;
+}
+
+.isurev-template__head,
+.isurev-template__foot {
+	padding: 12px 20px;
+}
+
+.isurev-template__head h2 {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 0.4em 0 0.2em;
+}
+
+.isurev-template__head p {
+	margin: 0;
+	color: #50575e;
+}
+
+.isurev-template__preview {
+	padding: 24px;
+	background: #f6f7f7;
+	font-size: 14px;
+}
+
+.isurev-template.is-locked .isurev-template__preview {
+	position: relative;
+}
+
+.isurev-template__foot {
+	display: flex;
+	justify-content: flex-end;
+	border-top: 1px solid #f0f0f1;
+}

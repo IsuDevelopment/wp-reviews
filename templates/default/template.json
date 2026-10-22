@@ -1,0 +1,6 @@
+{
+	"title": "Classic card",
+	"description": "Clean white card with avatar, stars and the platform logo.",
+	"tier": "free",
+	"layouts": [ "grid", "slider" ]
+}

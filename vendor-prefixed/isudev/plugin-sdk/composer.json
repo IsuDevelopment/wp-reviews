@@ -1,0 +1,29 @@
+{
+	"$schema": "https://getcomposer.org/schema.json",
+	"name": "isudev/plugin-sdk",
+	"description": "Shared cloud plumbing for isuDev WordPress plugins: API client, site registration, license cache, site-verify route and WP-CLI subcommands. Install prefixed with Strauss.",
+	"type": "library",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": ">=8.2"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+		"wp-coding-standards/wpcs": "^3.4.1"
+	},
+	"autoload": {
+		"classmap": [
+			"src/"
+		]
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		},
+		"sort-packages": true
+	},
+	"scripts": {
+		"lint": "phpcs",
+		"lint:fix": "phpcbf"
+	}
+}

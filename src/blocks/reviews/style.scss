@@ -1,0 +1,231 @@
+// Base layout for every template: grid, carousel, summary, stars, text.
+// Templates (templates/<slug>/style.css) style only the card itself.
+
+.isurev {
+	--isurev-gap: 1.25rem;
+	--isurev-star: #fbbc04;
+	--isurev-star-empty: rgb(0 0 0 / 15%);
+	--isurev-muted: color-mix(in srgb, currentcolor 60%, transparent);
+	--isurev-gaps: calc((var(--isurev-columns, 3) - 1) * var(--isurev-gap));
+	--isurev-col: calc((100% - var(--isurev-gaps)) / var(--isurev-columns, 3));
+
+	display: flex;
+	flex-direction: column;
+	gap: var(--isurev-gap);
+	container-type: inline-size;
+}
+
+.isurev__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.isurev__item {
+	margin: 0;
+	min-width: 0;
+}
+
+// Grid: up to --isurev-columns, fewer when a card would drop below 280px.
+.isurev--grid .isurev__list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(max(280px, var(--isurev-col)), 1fr));
+	gap: var(--isurev-gap);
+}
+
+// Carousel: native scroll-snap, the view script only wires the buttons.
+.isurev--slider {
+
+	.isurev__viewport {
+		// Positioned: keeps absolute children (.screen-reader-text) clipped.
+		position: relative;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		scrollbar-width: none;
+		overscroll-behavior-x: contain;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		&:focus-visible {
+			outline: 2px solid currentcolor;
+			outline-offset: 4px;
+		}
+	}
+
+	.isurev__list {
+		display: flex;
+		gap: var(--isurev-gap);
+	}
+
+	.isurev__item {
+		flex: 0 0 85%;
+		scroll-snap-align: start;
+
+		@container (min-width: 520px) {
+			flex-basis: calc((100% - var(--isurev-gap)) / 2);
+		}
+
+		@container (min-width: 860px) {
+			flex-basis: var(--isurev-col);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+
+		.isurev__viewport {
+			scroll-behavior: auto;
+		}
+	}
+}
+
+.isurev__controls {
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.5rem;
+}
+
+.isurev__nav {
+	display: inline-grid;
+	place-items: center;
+	width: 2.75rem;
+	height: 2.75rem;
+	padding: 0;
+	border: 1px solid currentcolor;
+	border-radius: 50%;
+	background: transparent;
+	color: inherit;
+	font-size: 1.5rem;
+	line-height: 1;
+	cursor: pointer;
+
+	&:disabled {
+		opacity: 0.3;
+		cursor: default;
+	}
+}
+
+// Summary header.
+.isurev__summary {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem 0.75rem;
+}
+
+.isurev__summary-icons {
+	display: inline-flex;
+	gap: 0.25rem;
+}
+
+.isurev__summary-score {
+	font-size: 1.75em;
+	line-height: 1;
+}
+
+.isurev__summary-count {
+	color: var(--isurev-muted, inherit);
+	font-size: 0.875em;
+}
+
+// Stars: one glyph run, filled by a gradient at --isurev-rating / 5.
+.isurev-stars {
+	display: inline-block;
+	// Fallbacks: stars also render outside .isurev (admin list table).
+	--isurev-fill: calc(var(--isurev-rating, 5) / 5 * 100%);
+	--isurev-on: var(--isurev-star, #fbbc04);
+	--isurev-off: var(--isurev-star-empty, rgb(0 0 0 / 15%));
+
+	background: linear-gradient(90deg, var(--isurev-on) var(--isurev-fill), var(--isurev-off) 0);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	font-size: 1.125rem;
+	letter-spacing: 0.1em;
+	line-height: 1;
+}
+
+.isurev-recommends {
+	font-size: 0.875em;
+	font-weight: 600;
+
+	&--positive::before {
+		content: "👍 ";
+	}
+
+	&--negative::before {
+		content: "👎 ";
+	}
+}
+
+.isurev-avatar {
+	flex: none;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	object-fit: cover;
+
+	&--initial {
+		display: inline-grid;
+		place-items: center;
+		background: hsl(var(--isurev-hue, 210) 55% 45%);
+		color: #fff;
+		font-weight: 600;
+		font-size: 1.25rem;
+	}
+}
+
+.isurev-date {
+	color: var(--isurev-muted, inherit);
+	font-size: 0.8125em;
+}
+
+.isurev-platform {
+	display: inline-flex;
+	flex: none;
+}
+
+.isurev-reply {
+	padding: 0.75rem;
+	border-left: 3px solid var(--isurev-star-empty);
+	font-size: 0.875em;
+
+	> p {
+		margin: 0.25em 0 0;
+	}
+}
+
+// Text clamp; the view script shows "Read more" only on real overflow.
+.isurev-text {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: var(--isurev-lines, 5);
+
+	> p {
+		margin: 0 0 0.5em;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&.is-expanded {
+		display: block;
+	}
+}
+
+.isurev-more {
+	align-self: flex-start;
+	padding: 0;
+	border: 0;
+	background: none;
+	color: inherit;
+	font: inherit;
+	font-size: 0.875em;
+	font-weight: 600;
+	text-decoration: underline;
+	cursor: pointer;
+}

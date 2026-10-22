@@ -1,0 +1,605 @@
+# Copyright (C) 2026 IsuDev
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: IsuDev Reviews 0.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/isudev-reviews\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-22T00:31:27+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: isudev-reviews\n"
+
+#. Plugin Name of the plugin
+#: isudev-reviews.php
+msgid "IsuDev Reviews"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: isudev-reviews.php
+msgid "https://isudev.com/plugins/reviews/"
+msgstr ""
+
+#. Description of the plugin
+#: isudev-reviews.php
+msgid "Google and Facebook reviews stored locally and shown with Gutenberg blocks. Free quick import, Pro auto-sync and templates."
+msgstr ""
+
+#. Author of the plugin
+#: isudev-reviews.php
+msgid "IsuDev"
+msgstr ""
+
+#. Author URI of the plugin
+#: isudev-reviews.php
+msgid "https://isudev.com"
+msgstr ""
+
+#: includes/admin/class-admin.php:50
+#: includes/admin/views/reviews.php:15
+#: src/blocks/reviews/edit.js:257
+msgid "Reviews"
+msgstr ""
+
+#: includes/admin/class-admin.php:52
+msgid "All reviews"
+msgstr ""
+
+#: includes/admin/class-admin.php:53
+#: src/blocks/reviews/edit.js:119
+msgid "Sources"
+msgstr ""
+
+#: includes/admin/class-admin.php:54
+#: includes/admin/views/templates.php:59
+msgid "Templates"
+msgstr ""
+
+#: includes/admin/class-admin.php:55
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/class-admin.php:142
+msgid "Choose a platform, a provider that supports it and an ID."
+msgstr ""
+
+#: includes/admin/class-admin.php:148
+msgid "The free version supports one source. Upgrade to Pro for more."
+msgstr ""
+
+#: includes/admin/class-admin.php:196
+msgid "Source and its reviews deleted."
+msgstr ""
+
+#: includes/admin/class-admin.php:205
+msgid "Settings saved."
+msgstr ""
+
+#: includes/admin/class-admin.php:218
+msgid "This template needs a Pro license."
+msgstr ""
+
+#: includes/admin/class-admin.php:222
+msgid "Default template updated."
+msgstr ""
+
+#: includes/admin/class-admin.php:238
+#: includes/admin/class-admin.php:317
+msgid "You are not allowed to do this."
+msgstr ""
+
+#: includes/admin/class-admin.php:247
+msgid "Reviews hidden."
+msgstr ""
+
+#: includes/admin/class-admin.php:247
+msgid "Reviews visible again."
+msgstr ""
+
+#. translators: 1: fetched reviews, 2: new reviews.
+#: includes/admin/class-admin.php:306
+msgid "Sync done: %1$d fetched, %2$d new."
+msgstr ""
+
+#: includes/admin/class-reviews-list-table.php:64
+msgid "Author"
+msgstr ""
+
+#: includes/admin/class-reviews-list-table.php:65
+#: includes/admin/views/sources.php:32
+msgid "Rating"
+msgstr ""
+
+#: includes/admin/class-reviews-list-table.php:66
+msgid "Review"
+msgstr ""
+
+#: includes/admin/class-reviews-list-table.php:67
+#: includes/admin/views/sources.php:31
+msgid "Source"
+msgstr ""
+
+#: includes/admin/class-reviews-list-table.php:68
+msgid "Date"
+msgstr ""
+
+#: includes/admin/class-reviews-list-table.php:79
+#: includes/admin/class-reviews-list-table.php:174
+msgid "Hide"
+msgstr ""
+
+#: includes/admin/class-reviews-list-table.php:80
+#: includes/admin/class-reviews-list-table.php:174
+msgid "Show"
+msgstr ""
+
+#: includes/admin/class-reviews-list-table.php:129
+msgid "Filter by source"
+msgstr ""
+
+#: includes/admin/class-reviews-list-table.php:131
+msgid "All sources"
+msgstr ""
+
+#: includes/admin/class-reviews-list-table.php:136
+msgid "Filter"
+msgstr ""
+
+#: includes/admin/class-reviews-list-table.php:177
+msgid "View original"
+msgstr ""
+
+#: includes/admin/class-reviews-list-table.php:184
+msgid "Hidden"
+msgstr ""
+
+#: includes/admin/class-reviews-list-table.php:207
+msgid "(rating only)"
+msgstr ""
+
+#. translators: %s: link to the Sources screen.
+#: includes/admin/class-reviews-list-table.php:235
+msgid "No reviews yet. %s"
+msgstr ""
+
+#: includes/admin/class-reviews-list-table.php:236
+#: includes/admin/views/sources.php:119
+msgid "Add a source"
+msgstr ""
+
+#: includes/admin/views/reviews.php:16
+msgid "Manage sources"
+msgstr ""
+
+#: includes/admin/views/settings.php:14
+#: includes/admin/views/settings.php:27
+msgid "Free version"
+msgstr ""
+
+#: includes/admin/views/settings.php:15
+msgid "Active"
+msgstr ""
+
+#: includes/admin/views/settings.php:16
+msgid "Expired"
+msgstr ""
+
+#: includes/admin/views/settings.php:17
+msgid "Invalid key"
+msgstr ""
+
+#: includes/admin/views/settings.php:18
+msgid "Could not verify"
+msgstr ""
+
+#: includes/admin/views/settings.php:19
+msgid "Site limit reached: free a site in your isuDev account"
+msgstr ""
+
+#: includes/admin/views/settings.php:23
+msgid "Reviews settings"
+msgstr ""
+
+#: includes/admin/views/settings.php:27
+msgid "Pro license"
+msgstr ""
+
+#. translators: %s: date.
+#: includes/admin/views/settings.php:34
+msgid "Renews or expires on %s."
+msgstr ""
+
+#: includes/admin/views/settings.php:38
+msgid "Pro adds Facebook reviews, full review history, automatic sync, multiple sources and premium templates."
+msgstr ""
+
+#: includes/admin/views/settings.php:52
+msgid "License key"
+msgstr ""
+
+#: includes/admin/views/settings.php:52
+msgid "From your isuDev account. Leave empty for the free version."
+msgstr ""
+
+#: includes/admin/views/settings.php:53
+msgid "Google API key"
+msgstr ""
+
+#: includes/admin/views/settings.php:53
+msgid "Only for the \"Google Places API\" provider. Restrict the key to the Places API (New)."
+msgstr ""
+
+#: includes/admin/views/settings.php:62
+msgid "Saved. Type to replace."
+msgstr ""
+
+#: includes/admin/views/settings.php:64
+msgid "Remove"
+msgstr ""
+
+#: includes/admin/views/settings.php:71
+msgid "Review language"
+msgstr ""
+
+#: includes/admin/views/settings.php:74
+msgid "Two-letter code, e.g. pl. Used when the source supports translations."
+msgstr ""
+
+#: includes/admin/views/settings.php:78
+msgid "Cloud API URL"
+msgstr ""
+
+#: includes/admin/views/settings.php:81
+msgid "Advanced. Change only for development."
+msgstr ""
+
+#: includes/admin/views/sources.php:19
+msgid "Manual only"
+msgstr ""
+
+#: includes/admin/views/sources.php:20
+msgid "Daily"
+msgstr ""
+
+#: includes/admin/views/sources.php:21
+msgid "Weekly"
+msgstr ""
+
+#: includes/admin/views/sources.php:25
+msgid "Review sources"
+msgstr ""
+
+#: includes/admin/views/sources.php:33
+msgid "Stored"
+msgstr ""
+
+#: includes/admin/views/sources.php:34
+msgid "Provider"
+msgstr ""
+
+#: includes/admin/views/sources.php:35
+#: includes/admin/views/sources.php:172
+msgid "Auto-sync"
+msgstr ""
+
+#: includes/admin/views/sources.php:36
+msgid "Last sync"
+msgstr ""
+
+#: includes/admin/views/sources.php:37
+msgid "Actions"
+msgstr ""
+
+#: includes/admin/views/sources.php:47
+msgid "Open profile"
+msgstr ""
+
+#: includes/admin/views/sources.php:77
+msgid "Error"
+msgstr ""
+
+#. translators: %s: human time difference.
+#. translators: %s: human time difference, e.g. "3 months".
+#: includes/admin/views/sources.php:82
+#: includes/class-renderer.php:246
+msgid "%s ago"
+msgstr ""
+
+#: includes/admin/views/sources.php:85
+msgid "Never"
+msgstr ""
+
+#: includes/admin/views/sources.php:93
+msgid "Sync now"
+msgstr ""
+
+#: includes/admin/views/sources.php:95
+msgid "Delete this source and all its reviews?"
+msgstr ""
+
+#: includes/admin/views/sources.php:99
+msgid "Delete"
+msgstr ""
+
+#: includes/admin/views/sources.php:109
+msgid "Try it with demo data"
+msgstr ""
+
+#: includes/admin/views/sources.php:110
+msgid "Imports 30 sample reviews of a fictional coffee roaster. No API or license needed, so it also works on local sites. Delete the demo source when you are done."
+msgstr ""
+
+#: includes/admin/views/sources.php:114
+msgid "Import demo reviews"
+msgstr ""
+
+#: includes/admin/views/sources.php:125
+msgid "Platform"
+msgstr ""
+
+#: includes/admin/views/sources.php:140
+msgid "Place ID / Page ID"
+msgstr ""
+
+#. translators: %s: link to Google's Place ID finder.
+#: includes/admin/views/sources.php:147
+msgid "Google: find the Place ID with the %s. Facebook: the numeric page ID."
+msgstr ""
+
+#: includes/admin/views/sources.php:148
+msgid "Place ID Finder"
+msgstr ""
+
+#: includes/admin/views/sources.php:155
+msgid "Name (optional)"
+msgstr ""
+
+#: includes/admin/views/sources.php:159
+msgid "How to fetch"
+msgstr ""
+
+#: includes/admin/views/sources.php:181
+msgid "Automatic syncing of new reviews is part of Pro."
+msgstr ""
+
+#: includes/admin/views/sources.php:186
+msgid "Add and fetch reviews"
+msgstr ""
+
+#: includes/admin/views/templates.php:25
+msgid "Fast, friendly and fair. They fixed my laptop the same day and explained exactly what was wrong. Highly recommended!"
+msgstr ""
+
+#: includes/admin/views/templates.php:36
+msgid "Great service and good prices. My PC runs like new after the upgrade."
+msgstr ""
+
+#: includes/admin/views/templates.php:37
+msgid "Thank you, Marek!"
+msgstr ""
+
+#: includes/admin/views/templates.php:47
+msgid "Professional data recovery. A bit pricey, but they saved all my photos."
+msgstr ""
+
+#: includes/admin/views/templates.php:60
+msgid "The default template is used by every Reviews block set to \"Site default\". Each block can still pick its own."
+msgstr ""
+
+#: includes/admin/views/templates.php:95
+msgid "Default"
+msgstr ""
+
+#: includes/admin/views/templates.php:97
+msgid "Unlock with Pro"
+msgstr ""
+
+#: includes/admin/views/templates.php:103
+msgid "Set as default"
+msgstr ""
+
+#: includes/class-renderer.php:100
+msgid "carousel"
+msgstr ""
+
+#: includes/class-renderer.php:101
+msgid "Customer reviews"
+msgstr ""
+
+#: includes/class-renderer.php:103
+msgid "Previous reviews"
+msgstr ""
+
+#: includes/class-renderer.php:104
+msgid "Next reviews"
+msgstr ""
+
+#. translators: %s: number of reviews.
+#: includes/class-renderer.php:178
+msgid "Based on %s review"
+msgid_plural "Based on %s reviews"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-renderer.php:196
+msgid "Recommends"
+msgstr ""
+
+#: includes/class-renderer.php:196
+msgid "Doesn't recommend"
+msgstr ""
+
+#. translators: %s: rating, e.g. 4.5.
+#: includes/class-renderer.php:205
+msgid "Rated %s out of 5"
+msgstr ""
+
+#: includes/class-renderer.php:267
+msgid "Show less"
+msgstr ""
+
+#: includes/class-renderer.php:268
+msgid "Read more"
+msgstr ""
+
+#: includes/class-renderer.php:284
+msgid "Response from the owner"
+msgstr ""
+
+#: includes/class-source-repository.php:73
+msgid "This source already exists."
+msgstr ""
+
+#: includes/class-sync-service.php:46
+msgid "Source not found."
+msgstr ""
+
+#: includes/class-sync-service.php:51
+msgid "Unknown provider."
+msgstr ""
+
+#: includes/providers/class-cloud-provider.php:35
+msgid "isuDev Cloud (Pro)"
+msgstr ""
+
+#. translators: %d: review limit.
+#: includes/providers/class-cloud-provider.php:37
+msgid "isuDev Cloud: quick import, up to %d reviews"
+msgstr ""
+
+#: includes/providers/class-cloud-provider.php:54
+msgid "Facebook reviews need a Pro license."
+msgstr ""
+
+#: includes/providers/class-demo-provider.php:37
+msgid "Demo data: 30 sample reviews, no API"
+msgstr ""
+
+#: includes/providers/class-demo-provider.php:65
+msgid "Demo data file is missing."
+msgstr ""
+
+#: includes/providers/class-google-places-provider.php:37
+msgid "Google Places API: your key, 5 newest reviews"
+msgstr ""
+
+#: includes/providers/class-google-places-provider.php:54
+msgid "Add a Google API key in Settings first."
+msgstr ""
+
+#: includes/providers/class-google-places-provider.php:90
+msgid "Google Places API error."
+msgstr ""
+
+#: src/blocks/reviews/edit.js:55
+msgid "Site default"
+msgstr ""
+
+#: src/blocks/reviews/edit.js:56
+msgid "Follows Reviews › Templates."
+msgstr ""
+
+#: src/blocks/reviews/edit.js:79
+msgid "Pro"
+msgstr ""
+
+#: src/blocks/reviews/edit.js:123
+msgid "Add a review source first."
+msgstr ""
+
+#. translators: %d: number of stored reviews.
+#: src/blocks/reviews/edit.js:136
+msgid "%d stored reviews"
+msgstr ""
+
+#: src/blocks/reviews/edit.js:148
+msgid "None selected shows all sources."
+msgstr ""
+
+#: src/blocks/reviews/edit.js:155
+msgid "Template"
+msgstr ""
+
+#: src/blocks/reviews/edit.js:162
+#: src/blocks/reviews/edit.js:164
+msgid "Layout"
+msgstr ""
+
+#: src/blocks/reviews/edit.js:173
+msgid "Grid"
+msgstr ""
+
+#: src/blocks/reviews/edit.js:177
+msgid "Carousel"
+msgstr ""
+
+#: src/blocks/reviews/edit.js:181
+msgid "Columns"
+msgstr ""
+
+#: src/blocks/reviews/edit.js:192
+msgid "Show rating summary"
+msgstr ""
+
+#: src/blocks/reviews/edit.js:200
+msgid "Filters"
+msgstr ""
+
+#: src/blocks/reviews/edit.js:202
+msgid "Number of reviews"
+msgstr ""
+
+#: src/blocks/reviews/edit.js:211
+msgid "Minimum rating"
+msgstr ""
+
+#: src/blocks/reviews/edit.js:222
+msgid "Visible lines before \"Read more\""
+msgstr ""
+
+#: src/blocks/reviews/edit.js:236
+msgid "Only reviews with text"
+msgstr ""
+
+#: src/blocks/reviews/edit.js:258
+msgid "No reviews match these settings yet. Add a source and sync it under Reviews › Sources."
+msgstr ""
+
+#: src/blocks/reviews/block.json
+msgctxt "block title"
+msgid "Reviews"
+msgstr ""
+
+#: src/blocks/reviews/block.json
+msgctxt "block description"
+msgid "Google and Facebook reviews stored on this site, as a grid or carousel."
+msgstr ""
+
+#: src/blocks/reviews/block.json
+msgctxt "block keyword"
+msgid "reviews"
+msgstr ""
+
+#: src/blocks/reviews/block.json
+msgctxt "block keyword"
+msgid "google"
+msgstr ""
+
+#: src/blocks/reviews/block.json
+msgctxt "block keyword"
+msgid "facebook"
+msgstr ""
+
+#: src/blocks/reviews/block.json
+msgctxt "block keyword"
+msgid "testimonials"
+msgstr ""
+
+#: src/blocks/reviews/block.json
+msgctxt "block keyword"
+msgid "opinie"
+msgstr ""

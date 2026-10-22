@@ -1,0 +1,72 @@
+{
+	"$schema": "https://getcomposer.org/schema.json",
+	"name": "isudev/reviews",
+	"description": "Google and Facebook reviews stored locally and shown with Gutenberg blocks.",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-or-later",
+	"repositories": [
+		{
+			"type": "path",
+			"url": "../../isudev-plugin-sdk",
+			"options": {
+				"symlink": false,
+				"versions": {
+					"isudev/plugin-sdk": "0.1.0"
+				}
+			}
+		}
+	],
+	"require": {
+		"php": ">=8.2",
+		"isudev/plugin-sdk": "^0.1",
+		"yahnis-elsts/plugin-update-checker": "^5.6"
+	},
+	"require-dev": {
+		"brianhenryie/strauss": "^0.31",
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+		"wp-coding-standards/wpcs": "^3.4.1"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		},
+		"sort-packages": true
+	},
+	"extra": {
+		"installer-name": "isudev-reviews",
+		"strauss": {
+			"target_directory": "vendor-prefixed",
+			"namespace_prefix": "IsuDev\\Reviews\\Vendor\\",
+			"classmap_prefix": "IsuDev_Reviews_",
+			"constant_prefix": "ISUREV_",
+			"packages": [
+				"isudev/plugin-sdk",
+				"yahnis-elsts/plugin-update-checker"
+			],
+			"delete_vendor_packages": false,
+			"exclude_from_prefix": {
+				"namespaces": [
+					"YahnisElsts\\PluginUpdateChecker\\"
+				]
+			}
+		}
+	},
+	"scripts": {
+		"prefix-namespaces": [
+			"strauss"
+		],
+		"post-install-cmd": [
+			"@prefix-namespaces"
+		],
+		"post-update-cmd": [
+			"@prefix-namespaces"
+		],
+		"lint": "phpcs",
+		"lint:fix": "phpcbf",
+		"code-map": "php bin/code-map.php",
+		"check": [
+			"@lint",
+			"php bin/code-map.php --check"
+		]
+	}
+}

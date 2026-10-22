@@ -1,0 +1,37 @@
+// Inspector only (outside the canvas iframe).
+.isurev-template-picker {
+	display: grid;
+	gap: 8px;
+}
+
+.isurev-template-picker__option.components-button {
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 2px;
+	height: auto;
+	padding: 8px 12px;
+	text-align: left;
+	white-space: normal;
+}
+
+.isurev-template-picker__title {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-weight: 600;
+}
+
+.isurev-template-picker__badge {
+	padding: 0 6px;
+	border-radius: 2px;
+	background: #1e1e1e;
+	color: #fff;
+	font-size: 10px;
+	line-height: 16px;
+	text-transform: uppercase;
+}
+
+.isurev-template-picker__desc {
+	font-size: 12px;
+	opacity: 0.8;
+}

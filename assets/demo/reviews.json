@@ -1,0 +1,351 @@
+{
+	"_comment": "Sample reviews for local testing (Demo_Provider). Fictional business and people. days_ago is turned into a date at import time.",
+	"source": {
+		"name": "Northbank Coffee Roasters (demo)",
+		"url": "",
+		"rating": 4.6,
+		"total": 128
+	},
+	"reviews": [
+		{
+			"id": "demo-01",
+			"author": {
+				"name": "Emma Larsen"
+			},
+			"rating": 5,
+			"text": "Best flat white in town. The baristas remember my order and the oat milk is never an afterthought.",
+			"language": "en",
+			"days_ago": 3,
+			"reply": {
+				"text": "Thank you, Emma! See you tomorrow morning.",
+				"days_ago": 2
+			}
+		},
+		{
+			"id": "demo-02",
+			"author": {
+				"name": "Marcus Hill"
+			},
+			"rating": 5,
+			"text": "Great beans to take home. Ask for the Ethiopian natural, it tastes like blueberries.",
+			"language": "en",
+			"days_ago": 9
+		},
+		{
+			"id": "demo-03",
+			"author": {
+				"name": "Sofia Nowak"
+			},
+			"rating": 5,
+			"text": "Przepyszna kawa i bardzo miła obsługa. Ciasto marchewkowe obowiązkowo!",
+			"language": "pl",
+			"days_ago": 14,
+			"reply": {
+				"text": "Dziękujemy, Sofio! Ciasto pieczemy codziennie rano.",
+				"days_ago": 13
+			}
+		},
+		{
+			"id": "demo-04",
+			"author": {
+				"name": "Daniel Okafor"
+			},
+			"rating": 4,
+			"text": "Lovely place to work for a few hours. Wi-Fi is fast, but it gets loud around noon.",
+			"language": "en",
+			"days_ago": 20,
+			"reply": {
+				"text": "Thanks Daniel! The back room is quieter at lunchtime.",
+				"days_ago": 19
+			}
+		},
+		{
+			"id": "demo-05",
+			"author": {
+				"name": "Hannah Berg"
+			},
+			"rating": 5,
+			"text": "",
+			"language": "en",
+			"days_ago": 26
+		},
+		{
+			"id": "demo-06",
+			"author": {
+				"name": "Lukas Meyer"
+			},
+			"rating": 5,
+			"text": "Consistent espresso, friendly team, fair prices. My go-to on the way to work.",
+			"language": "en",
+			"days_ago": 31
+		},
+		{
+			"id": "demo-07",
+			"author": {
+				"name": "Aisha Rahman"
+			},
+			"rating": 5,
+			"text": "They helped me pick a grinder and dial in my pour-over at home. Above and beyond.",
+			"language": "en",
+			"days_ago": 38,
+			"reply": {
+				"text": "Happy brewing, Aisha!",
+				"days_ago": 37
+			}
+		},
+		{
+			"id": "demo-08",
+			"author": {
+				"name": "Tom Fischer"
+			},
+			"rating": 3,
+			"text": "Coffee is good, but I waited 15 minutes for a takeaway on a Saturday.",
+			"language": "en",
+			"days_ago": 45,
+			"reply": {
+				"text": "Sorry about the wait, Tom. We have added a second barista on weekends.",
+				"days_ago": 44
+			}
+		},
+		{
+			"id": "demo-09",
+			"author": {
+				"name": "Julia Kowalska"
+			},
+			"rating": 5,
+			"text": "Najlepsze cappuccino w okolicy. Wracam co tydzień.",
+			"language": "pl",
+			"days_ago": 52
+		},
+		{
+			"id": "demo-10",
+			"author": {
+				"name": "Noah Andersen"
+			},
+			"rating": 5,
+			"text": "Small batch roasting you can taste. The seasonal blend is excellent.",
+			"language": "en",
+			"days_ago": 60
+		},
+		{
+			"id": "demo-11",
+			"author": {
+				"name": "Chloe Martin"
+			},
+			"rating": 4,
+			"text": "Beautiful interior and great pastries. A bit pricey, but worth it.",
+			"language": "en",
+			"days_ago": 67
+		},
+		{
+			"id": "demo-12",
+			"author": {
+				"name": "Ole Hansen"
+			},
+			"rating": 5,
+			"text": "Fantastisk kaffe og hyggelig betjening.",
+			"language": "no",
+			"days_ago": 73,
+			"reply": {
+				"text": "Tusen takk, Ole!",
+				"days_ago": 72
+			}
+		},
+		{
+			"id": "demo-13",
+			"author": {
+				"name": "Priya Shah"
+			},
+			"rating": 5,
+			"text": "Their cold brew saved my summer. Smooth, not bitter at all.",
+			"language": "en",
+			"days_ago": 81
+		},
+		{
+			"id": "demo-14",
+			"author": {
+				"name": "Jakub Wiśniewski"
+			},
+			"rating": 5,
+			"text": "",
+			"language": "pl",
+			"days_ago": 88
+		},
+		{
+			"id": "demo-15",
+			"author": {
+				"name": "Grace Turner"
+			},
+			"rating": 5,
+			"text": "Ordered beans online, they arrived roasted two days earlier. Great packaging too.",
+			"language": "en",
+			"days_ago": 95,
+			"reply": {
+				"text": "Thank you, Grace! Fresh is the whole point.",
+				"days_ago": 94
+			}
+		},
+		{
+			"id": "demo-16",
+			"author": {
+				"name": "Felix Braun"
+			},
+			"rating": 2,
+			"text": "My latte was lukewarm and the table was not cleaned.",
+			"language": "en",
+			"days_ago": 103,
+			"reply": {
+				"text": "We are sorry, Felix. Please come back and the next coffee is on us.",
+				"days_ago": 102
+			}
+		},
+		{
+			"id": "demo-17",
+			"author": {
+				"name": "Mia Johansson"
+			},
+			"rating": 5,
+			"text": "Dog friendly, kind staff and they always have water out for the pups.",
+			"language": "en",
+			"days_ago": 110
+		},
+		{
+			"id": "demo-18",
+			"author": {
+				"name": "Oliver Smith"
+			},
+			"rating": 5,
+			"text": "Took the home brewing workshop. Learned more in two hours than in two years of YouTube.",
+			"language": "en",
+			"days_ago": 118
+		},
+		{
+			"id": "demo-19",
+			"author": {
+				"name": "Zuzanna Lewandowska"
+			},
+			"rating": 4,
+			"text": "Bardzo dobra kawa, choć miejsc siedzących mogłoby być więcej.",
+			"language": "pl",
+			"days_ago": 126
+		},
+		{
+			"id": "demo-20",
+			"author": {
+				"name": "Ethan Brooks"
+			},
+			"rating": 5,
+			"text": "Perfect espresso, every single time.",
+			"language": "en",
+			"days_ago": 134
+		},
+		{
+			"id": "demo-21",
+			"author": {
+				"name": "Lena Vogel"
+			},
+			"rating": 5,
+			"text": "The decaf actually tastes like coffee. Rare and appreciated.",
+			"language": "en",
+			"days_ago": 141
+		},
+		{
+			"id": "demo-22",
+			"author": {
+				"name": "Samuel Adeyemi"
+			},
+			"rating": 5,
+			"text": "Great music, great coffee, great people.",
+			"language": "en",
+			"days_ago": 150
+		},
+		{
+			"id": "demo-23",
+			"author": {
+				"name": "Ingrid Solberg"
+			},
+			"rating": 5,
+			"text": "",
+			"language": "no",
+			"days_ago": 158
+		},
+		{
+			"id": "demo-24",
+			"author": {
+				"name": "Isabella Rossi"
+			},
+			"rating": 5,
+			"text": "Reminds me of the little bars in Milan. Short, strong and perfect.",
+			"language": "en",
+			"days_ago": 167,
+			"reply": {
+				"text": "Grazie mille, Isabella!",
+				"days_ago": 166
+			}
+		},
+		{
+			"id": "demo-25",
+			"author": {
+				"name": "Adam Zieliński"
+			},
+			"rating": 5,
+			"text": "Świetne miejsce na spotkanie, polecam espresso tonic.",
+			"language": "pl",
+			"days_ago": 175
+		},
+		{
+			"id": "demo-26",
+			"author": {
+				"name": "Charlotte Evans"
+			},
+			"rating": 4,
+			"text": "Lovely staff. Would love more vegan pastry options.",
+			"language": "en",
+			"days_ago": 186,
+			"reply": {
+				"text": "Noted, Charlotte! Two new vegan pastries arrive next month.",
+				"days_ago": 185
+			}
+		},
+		{
+			"id": "demo-27",
+			"author": {
+				"name": "Henrik Dahl"
+			},
+			"rating": 5,
+			"text": "Best roastery in the city, no contest.",
+			"language": "en",
+			"days_ago": 199
+		},
+		{
+			"id": "demo-28",
+			"author": {
+				"name": "Amelia Clarke"
+			},
+			"rating": 3,
+			"text": "Good coffee, slow Wi-Fi.",
+			"language": "en",
+			"days_ago": 214
+		},
+		{
+			"id": "demo-29",
+			"author": {
+				"name": "Leo Novak"
+			},
+			"rating": 5,
+			"text": "Friendly baristas who clearly love what they do.",
+			"language": "en",
+			"days_ago": 233
+		},
+		{
+			"id": "demo-30",
+			"author": {
+				"name": "Nora Lindqvist"
+			},
+			"rating": 5,
+			"text": "My favourite Sunday ritual: a cortado and a cinnamon bun here.",
+			"language": "en",
+			"days_ago": 251
+		}
+	]
+}

@@ -28,10 +28,12 @@ final class License {
 	 *
 	 * @param Config     $config SDK configuration.
 	 * @param Api_Client $api    API client.
+	 * @param Links|null $links  Product links, refreshed from the license check when given.
 	 */
 	public function __construct(
 		private readonly Config $config,
 		private readonly Api_Client $api,
+		private readonly ?Links $links = null,
 	) {}
 
 	/**
@@ -92,6 +94,9 @@ final class License {
 				$state['status']     = \sanitize_key( (string) ( $response['status'] ?? 'invalid' ) );
 				$state['features']   = \array_values( \array_intersect( $this->config->features, (array) ( $response['features'] ?? array() ) ) );
 				$state['expires_at'] = \sanitize_text_field( (string) ( $response['expires_at'] ?? '' ) );
+				if ( $this->links && \is_array( $response['links'] ?? null ) ) {
+					$this->links->store( $response['links'] );
+				}
 			}
 		}
 

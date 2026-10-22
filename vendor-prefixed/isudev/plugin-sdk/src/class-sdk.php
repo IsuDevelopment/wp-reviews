@@ -32,13 +32,21 @@ final class Sdk {
 	private License $license;
 
 	/**
+	 * Product links.
+	 *
+	 * @var Links
+	 */
+	private Links $links;
+
+	/**
 	 * Constructor.
 	 *
 	 * @param Config $config SDK configuration.
 	 */
 	public function __construct( private readonly Config $config ) {
 		$this->api     = new Api_Client( $config );
-		$this->license = new License( $config, $this->api );
+		$this->links   = new Links( $config );
+		$this->license = new License( $config, $this->api, $this->links );
 	}
 
 	/**
@@ -80,7 +88,15 @@ final class Sdk {
 	public function uninstall(): void {
 		\delete_option( $this->config->option( 'site_token' ) );
 		\delete_option( $this->config->option( 'license' ) );
+		\delete_option( $this->config->option( 'links' ) );
 		\delete_transient( $this->config->option( 'verify_nonce' ) );
+	}
+
+	/**
+	 * Product links (pricing page, account, docs, download) from the platform.
+	 */
+	public function links(): Links {
+		return $this->links;
 	}
 
 	/**

@@ -42,6 +42,11 @@ So the site must be **reachable from the internet** (no `.local`, no basic auth 
 - Features: `auto_sync`, `facebook`, `unlimited`, `pro_templates`, `multiple_sources` (`Plugin::FEATURES`). Free: one source, no cron, free templates only.
 - The UI and cron read `Plugin::license()->has()`; the server enforces the same things again.
 
+### Links (where to buy Pro)
+
+- `Plugin::link( 'pricing' | 'account' | 'docs' | 'download' )` → SDK `Links`: from the platform's public `/v1/catalog` (cached a week, also refreshed by the license check), fallback `Config::$links` in `Plugin::cloud()`. The platform admin (Sales → Products) is the only place to change them; never hard-code a purchase URL.
+- Shown as "Get Pro" (Settings, Sources, Plugins screen action link) on free, "Manage your license…" on Pro.
+
 ### Render
 
 - `render.php` → `Renderer::render( $attributes )`: normalize attributes, query visible reviews of the chosen sources, summary (average, count) and one `card.php` per review from the resolved template.

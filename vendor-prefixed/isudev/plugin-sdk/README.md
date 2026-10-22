@@ -9,6 +9,7 @@ Shared cloud plumbing for isuDev WordPress plugins (PHP 8.2+, WP 6.9+, WPCS):
 | `Api_Client` | `request()` (site token, one re-register retry on `<prefix>_api_invalid_site_token`), `send()` (one round trip) |
 | `Site_Registration` | `token()`, `forget()`, `register()`, `verify()` |
 | `License` | 12 h cache, `refresh()`, `has()` (filter `<prefix>_has_feature`), `is_pro()`, keeps a good Pro state through outages (retry after 1 h) |
+| `Links` | Pricing, buy, account, docs and download links from the platform's public `/v1/catalog` (no site token, cached a week, also refreshed by the license check), falling back to `Config::$links` |
 | `Cli_Command` | `register` and `license` subcommands under the plugin's own command |
 
 Settings (API URL, write-only license key) stay in the plugin; the SDK reads them through the `Config` callables.
@@ -57,6 +58,8 @@ $sdk = new Sdk(
 		api_url: static fn(): string => Settings::get( 'api_url' ),
 		license_key: static fn(): string => Settings::get( 'license_key' ),
 		features: array( 'auto_sync', 'facebook' ),
+		// Until the platform answered once; afterwards its links (admin → Products) win.
+		links: array( 'pricing' => 'https://accounts.isudev.com/buy/reviews' ),
 	)
 );
 
@@ -65,8 +68,9 @@ $sdk->register();
 
 $sdk->license()->has( 'auto_sync' );
 $sdk->api()->request( 'POST', '/reviews/v1/fetch', $body );
+$sdk->links()->get( 'pricing' ); // "Get Pro" link, never hard-coded
 ```
 
-Default option names: `<prefix>_site_token`, `<prefix>_verify_nonce` (transient), `<prefix>_license`; override with `options: array( 'license' => '…' )`. Exclude `vendor-prefixed/` in the plugin's `phpcs.xml.dist`, and run `composer install` (with dev, for Strauss) before packaging a release.
+Default option names: `<prefix>_site_token`, `<prefix>_verify_nonce` (transient), `<prefix>_license`, `<prefix>_links`; override with `options: array( 'license' => '…' )`. Exclude `vendor-prefixed/` in the plugin's `phpcs.xml.dist`, and run `composer install` (with dev, for Strauss) before packaging a release.
 
 `composer lint` runs WPCS on `src/`.

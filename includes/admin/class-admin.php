@@ -37,6 +37,7 @@ final class Admin {
 		\add_action( 'admin_menu', array( $this, 'menu' ) );
 		\add_action( 'admin_enqueue_scripts', array( $this, 'assets' ) );
 		\add_action( 'admin_notices', array( $this, 'notice' ) );
+		\add_filter( 'plugin_action_links_' . \plugin_basename( FILE ), array( $this, 'action_links' ) );
 
 		foreach ( array( 'add_source', 'add_demo', 'delete_source', 'sync_source', 'save_settings', 'set_template', 'review_visibility' ) as $action ) {
 			\add_action( 'admin_post_isurev_' . $action, array( $this, 'handle_' . $action ) );
@@ -119,6 +120,22 @@ final class Admin {
 				'license'  => Plugin::license()->state(),
 			)
 		);
+	}
+
+	/**
+	 * Settings and, on the free version, "Get Pro" on the Plugins screen.
+	 *
+	 * @param array<string, string> $links Action links.
+	 * @return array<string, string>
+	 */
+	public function action_links( array $links ): array {
+		$extra = array( 'settings' => '<a href="' . \esc_url( \admin_url( 'admin.php?page=' . self::SLUG . '-settings' ) ) . '">' . \esc_html__( 'Settings', 'isudev-reviews' ) . '</a>' );
+
+		if ( ! Plugin::license()->is_pro() && Plugin::link( 'pricing' ) ) {
+			$extra['get_pro'] = '<a href="' . \esc_url( Plugin::link( 'pricing' ) ) . '" target="_blank" rel="noopener"><strong>' . \esc_html__( 'Get Pro', 'isudev-reviews' ) . '</strong></a>';
+		}
+
+		return \array_merge( $extra, $links );
 	}
 
 	/**

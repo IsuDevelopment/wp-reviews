@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1b589fee57a958eef8b3cacadd1c9d8",
+    "content-hash": "f8303451a6691e318bfcb69fda850d7c",
     "packages": [
         {
             "name": "isudev/plugin-sdk",
-            "version": "v0.1.1",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/IsuDevelopment/isudev-plugin-sdk.git",
-                "reference": "55993a6fb83f20680f840ebdac64ffbd91fe3dfc"
+                "reference": "24306c396ce8a905647e20e5708dc5b782e1126b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/IsuDevelopment/isudev-plugin-sdk/zipball/55993a6fb83f20680f840ebdac64ffbd91fe3dfc",
-                "reference": "55993a6fb83f20680f840ebdac64ffbd91fe3dfc",
+                "url": "https://api.github.com/repos/IsuDevelopment/isudev-plugin-sdk/zipball/24306c396ce8a905647e20e5708dc5b782e1126b",
+                "reference": "24306c396ce8a905647e20e5708dc5b782e1126b",
                 "shasum": ""
             },
             "require": {
@@ -46,10 +46,10 @@
             ],
             "description": "Shared cloud plumbing for isuDev WordPress plugins: API client, site registration, license cache, site-verify route and WP-CLI subcommands. Install prefixed with Strauss.",
             "support": {
-                "source": "https://github.com/IsuDevelopment/isudev-plugin-sdk/tree/v0.1.1",
+                "source": "https://github.com/IsuDevelopment/isudev-plugin-sdk/tree/v0.2.0",
                 "issues": "https://github.com/IsuDevelopment/isudev-plugin-sdk/issues"
             },
-            "time": "2026-10-22T07:00:43+00:00"
+            "time": "2026-10-22T09:32:17+00:00"
         },
         {
             "name": "yahnis-elsts/plugin-update-checker",

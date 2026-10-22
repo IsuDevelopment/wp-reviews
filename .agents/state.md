@@ -6,7 +6,7 @@ _Last updated: 2026-10-22_
 
 ## Where we are
 
-- Version `0.3.1`, repo `IsuDevelopment/wp-reviews` (public), releases with self-update (2026-10-22). Works end to end against **live** `papi.isudev.com` with real Google reviews (SerpApi): tested 2026-10-22 on `https://test.isuke.pl` (registered, IsuDev place synced: 4 reviews, 5.0) and once from `isudev-library.local` through a tunnel.
+- Version `0.4.0`, repo `IsuDevelopment/wp-reviews` (public), releases with self-update (2026-10-22). Works end to end against **live** `papi.isudev.com` with real Google reviews (SerpApi): tested 2026-10-22 on `https://test.isuke.pl` (registered, IsuDev place synced: 4 reviews, 5.0) and once from `isudev-library.local` through a tunnel.
 - Verified earlier in WP 7.1 Playground (`.agents/plan.md` §6): free import, dedupe, free → Pro backfill then incremental, list with hide/show, template gallery, block in the iframed editor, grid and carousel, mobile.
 - Free = 8 newest Google reviews per manual import (one SerpApi search), 4 fresh imports per 30 days per site (repeats within 7 days come from the API cache and are free), one source, free templates. Demo data (30 sample reviews, `wp isurev demo` or the Sources page button) works without the API, also on `.local`. Pro = full history, auto-sync, Facebook (needs the platform's Graph token, step 7 on the platform), Pro templates, several sources.
 - Lint: phpcs (WPCS), ESLint, Stylelint clean; CI runs them, the code-map check, the `vendor-prefixed` check and the build on every push (SDK from `IsuDevelopment/isudev-plugin-sdk` v0.1.1, public, 2026-10-22).

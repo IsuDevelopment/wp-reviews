@@ -8,6 +8,8 @@
  * @var array<string, mixed>  $license
  */
 
+use IsuDev\Reviews\Plugin;
+
 defined( 'ABSPATH' ) || exit;
 
 $isurev_status_labels = array(
@@ -36,6 +38,11 @@ $isurev_status_labels = array(
 			</p>
 		<?php elseif ( 'pro' !== $license['tier'] ) : ?>
 			<p><?php esc_html_e( 'Pro adds Facebook reviews, full review history, automatic sync, multiple sources and premium templates.', 'isudev-reviews' ); ?></p>
+		<?php endif; ?>
+		<?php if ( 'pro' !== $license['tier'] && Plugin::link( 'pricing' ) ) : ?>
+			<p><a class="button button-primary" href="<?php echo esc_url( Plugin::link( 'pricing' ) ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Get Pro', 'isudev-reviews' ); ?></a></p>
+		<?php elseif ( 'pro' === $license['tier'] && Plugin::link( 'account' ) ) : ?>
+			<p><a href="<?php echo esc_url( Plugin::link( 'account' ) ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Manage your license, sites and billing', 'isudev-reviews' ); ?></a></p>
 		<?php endif; ?>
 		<?php if ( $license['message'] ) : ?>
 			<p class="isurev-status--error"><?php echo esc_html( (string) $license['message'] ); ?></p>

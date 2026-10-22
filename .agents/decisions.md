@@ -4,6 +4,13 @@ Newest first, append-only: a changed decision gets a new entry that says what it
 
 Format: `## YYYY-MM-DD: title`, then **Decision**, **Why**, **Decided by**, **Affects**.
 
+## 2026-10-22: Purchase links come from the platform (0.4.0)
+
+- **Decision:** "Get Pro" and "Manage" links use `Plugin::link()` (SDK `Links`, v0.2.0), read from the platform's catalog and license check, with a fallback to `accounts.isudev.com/buy/reviews`. Buying happens on the platform's buy page (guest Paddle checkout, key by mail) until isudev.com has plugin pages.
+- **Why:** the platform is the single source of truth; a moved pricing page is fixed in its admin, not by a plugin release.
+- **Decided by:** user.
+- **Affects:** `Plugin::cloud()` (`links`), `Plugin::link()`, `views/settings.php`, `views/sources.php`, `Admin::action_links`, `assets/admin.css`, SDK `^0.2`.
+
 ## 2026-10-22: Free import is 8 reviews (0.3.0)
 
 - **Decision:** `Cloud_Provider::FREE_LIMIT` 18 → 8, matching the platform's new free tier (8 reviews, 4 fresh imports per 30 days, 7-day cache, cache hits free). Replaces the 18-review entry below.

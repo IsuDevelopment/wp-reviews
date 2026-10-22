@@ -4,7 +4,7 @@ Tags: reviews, google reviews, facebook reviews, testimonials, block
 Requires at least: 6.9
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 0.3.1
+Stable tag: 0.4.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,10 @@ The cloud import needs a publicly reachable site: the isuDev API verifies the do
 Updates arrive from GitHub releases through the built-in updater. Define `ISUREV_DISABLE_SELF_UPDATES` as `true` or use the `isurev_self_updates_enabled` filter to turn this off.
 
 == Changelog ==
+
+= 0.4.0 =
+* "Get Pro" links on the Settings, Sources and Plugins screens. The link comes from the isuDev platform, so it always points to the current pricing page.
+* Pro: a link to manage your license, sites and billing.
 
 = 0.3.1 =
 * Fix: the updater's Markdown parser was missing from the package, so checking GitHub for updates failed.

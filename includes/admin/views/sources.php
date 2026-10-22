@@ -105,6 +105,13 @@ $isurev_intervals = array(
 		</table>
 	<?php endif; ?>
 
+	<?php if ( ! $is_pro && Plugin::link( 'pricing' ) ) : ?>
+		<p class="isurev-upsell">
+			<?php esc_html_e( 'The free version imports the 8 newest reviews on demand. Pro keeps them in sync automatically, with full history, Facebook and more sources.', 'isudev-reviews' ); ?>
+			<a href="<?php echo esc_url( Plugin::link( 'pricing' ) ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Get Pro', 'isudev-reviews' ); ?></a>
+		</p>
+	<?php endif; ?>
+
 	<div class="isurev-panel">
 		<h2><?php esc_html_e( 'Try it with demo data', 'isudev-reviews' ); ?></h2>
 		<p><?php esc_html_e( 'Imports 30 sample reviews of a fictional coffee roaster. No API or license needed, so it also works on local sites. Delete the demo source when you are done.', 'isudev-reviews' ); ?></p>

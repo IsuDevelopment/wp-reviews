@@ -11,6 +11,7 @@ return array(
     'IsuDev\\Reviews\\Vendor\\IsuDev\\PluginSdk\\Cli_Command' => $vendorDir . '/isudev/plugin-sdk/src/class-cli-command.php',
     'IsuDev\\Reviews\\Vendor\\IsuDev\\PluginSdk\\Config' => $vendorDir . '/isudev/plugin-sdk/src/class-config.php',
     'IsuDev\\Reviews\\Vendor\\IsuDev\\PluginSdk\\License' => $vendorDir . '/isudev/plugin-sdk/src/class-license.php',
+    'IsuDev\\Reviews\\Vendor\\IsuDev\\PluginSdk\\Links' => $vendorDir . '/isudev/plugin-sdk/src/class-links.php',
     'IsuDev\\Reviews\\Vendor\\IsuDev\\PluginSdk\\Sdk' => $vendorDir . '/isudev/plugin-sdk/src/class-sdk.php',
     'IsuDev\\Reviews\\Vendor\\IsuDev\\PluginSdk\\Site_Registration' => $vendorDir . '/isudev/plugin-sdk/src/class-site-registration.php',
 );

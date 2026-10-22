@@ -90,10 +90,24 @@ final class Plugin {
 				api_url: static fn(): string => Settings::get( 'api_url' ),
 				license_key: static fn(): string => Settings::get( 'license_key' ),
 				features: self::FEATURES,
+				// Until the platform answered once; then its links (admin → Products) win.
+				links: array(
+					'pricing' => 'https://accounts.isudev.com/buy/reviews',
+					'account' => 'https://accounts.isudev.com',
+				),
 			)
 		);
 
 		return self::$cloud;
+	}
+
+	/**
+	 * Product link from the platform: pricing (where to buy Pro), account, docs or download.
+	 *
+	 * @param string $name Link name.
+	 */
+	public static function link( string $name ): string {
+		return self::cloud()->links()->get( $name );
 	}
 
 	/**

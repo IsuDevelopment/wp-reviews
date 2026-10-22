@@ -16,6 +16,7 @@ class ComposerStaticInit270d6e1268a3e2077a43e00b172a6869
         'IsuDev\\Reviews\\Vendor\\IsuDev\\PluginSdk\\Cli_Command' => __DIR__ . '/..' . '/isudev/plugin-sdk/src/class-cli-command.php',
         'IsuDev\\Reviews\\Vendor\\IsuDev\\PluginSdk\\Config' => __DIR__ . '/..' . '/isudev/plugin-sdk/src/class-config.php',
         'IsuDev\\Reviews\\Vendor\\IsuDev\\PluginSdk\\License' => __DIR__ . '/..' . '/isudev/plugin-sdk/src/class-license.php',
+        'IsuDev\\Reviews\\Vendor\\IsuDev\\PluginSdk\\Links' => __DIR__ . '/..' . '/isudev/plugin-sdk/src/class-links.php',
         'IsuDev\\Reviews\\Vendor\\IsuDev\\PluginSdk\\Sdk' => __DIR__ . '/..' . '/isudev/plugin-sdk/src/class-sdk.php',
         'IsuDev\\Reviews\\Vendor\\IsuDev\\PluginSdk\\Site_Registration' => __DIR__ . '/..' . '/isudev/plugin-sdk/src/class-site-registration.php',
     );

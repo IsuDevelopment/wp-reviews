@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 final class Config {
 
 	/**
-	 * Option names, keyed site_token, verify_nonce, license.
+	 * Option names, keyed site_token, verify_nonce, license, links.
 	 *
 	 * @var array<string, string>
 	 */
@@ -35,6 +35,7 @@ final class Config {
 	 * @param string[]              $features    Feature slugs the plugin understands; others are dropped.
 	 * @param array<string, string> $options     Overrides for the default option names.
 	 * @param string                $cli_command Parent WP-CLI command, defaults to the prefix.
+	 * @param array<string, string> $links       Fallback links (pricing, account, …) until the platform answered.
 	 */
 	public function __construct(
 		public readonly string $product,
@@ -45,12 +46,14 @@ final class Config {
 		public readonly array $features = array(),
 		array $options = array(),
 		public readonly string $cli_command = '',
+		public readonly array $links = array(),
 	) {
 		$this->options = \array_merge(
 			array(
 				'site_token'   => $prefix . '_site_token',
 				'verify_nonce' => $prefix . '_verify_nonce',
 				'license'      => $prefix . '_license',
+				'links'        => $prefix . '_links',
 			),
 			$options
 		);
@@ -73,7 +76,7 @@ final class Config {
 	/**
 	 * Option (or transient) name.
 	 *
-	 * @param string $key site_token, verify_nonce or license.
+	 * @param string $key site_token, verify_nonce, license or links.
 	 */
 	public function option( string $key ): string {
 		return $this->options[ $key ];

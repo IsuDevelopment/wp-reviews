@@ -6,7 +6,7 @@
 
 | File | Type | Summary | Public methods |
 | --- | --- | --- | --- |
-| `includes/admin/class-admin.php` | class `Admin` | Menu, form handlers (admin-post.php) and notices. | `register`, `menu`, `assets`, `page_reviews`, `page_sources`, `page_templates`, `page_settings`, `handle_add_source`, `handle_add_demo`, `handle_sync_source`, `handle_delete_source`, `handle_save_settings`, `handle_set_template`, `handle_review_visibility`, `handle_bulk`, `notice` |
+| `includes/admin/class-admin.php` | class `Admin` | Menu, form handlers (admin-post.php) and notices. | `register`, `menu`, `assets`, `page_reviews`, `page_sources`, `page_templates`, `page_settings`, `action_links`, `handle_add_source`, `handle_add_demo`, `handle_sync_source`, `handle_delete_source`, `handle_save_settings`, `handle_set_template`, `handle_review_visibility`, `handle_bulk`, `notice` |
 | `includes/admin/class-reviews-list-table.php` | class `Reviews_List_Table` | All stored reviews with source filter and hide/show. | `get_columns`, `prepare_items`, `single_row`, `no_items` |
 | `includes/admin/views/reviews.php` | file | View: all reviews. | |
 | `includes/admin/views/settings.php` | file | View: settings and license. | |
@@ -15,7 +15,7 @@
 | `includes/class-block.php` | class `Block` | Registers isudev-reviews/reviews from build/ and the template styles. | `register`, `register_block` |
 | `includes/class-cli.php` | class `Cli` | Manage review sources and syncs. `register` and `license` come from the isuDev plugin SDK. | `register`, `sources`, `source_add`, `demo`, `source_delete`, `sync`, `set` |
 | `includes/class-cron.php` | class `Cron` | Hourly tick that syncs sources whose interval has passed. | `register`, `schedule`, `unschedule`, `tick` |
-| `includes/class-plugin.php` | class `Plugin` | Plugin bootstrap. | `boot`, `activate`, `deactivate`, `sync_service`, `cloud`, `license` |
+| `includes/class-plugin.php` | class `Plugin` | Plugin bootstrap. | `boot`, `activate`, `deactivate`, `sync_service`, `cloud`, `link`, `license` |
 | `includes/class-renderer.php` | class `Renderer` | Renders the wrapper, summary and one card per review through the chosen template. Card templates call the static helpers below; every helper returns escaped HTML. | `normalize`, `render`, `summary_data`, `stars`, `avatar`, `date`, `text`, `reply`, `platform_icon` |
 | `includes/class-rest-controller.php` | class `Rest_Controller` | Namespace isudev-reviews/v1. The SDK adds site-verify to the same namespace. | `register`, `routes`, `sources`, `templates`, `sync` |
 | `includes/class-review-repository.php` | class `Review_Repository` | Reads and upserts reviews. | `upsert_many`, `query`, `count`, `set_hidden` |
@@ -49,6 +49,7 @@ Own hooks (`isurev_*`) are the extension points; `add_*` rows show what the plug
 | add_action | `'plugins_loaded'` | `isudev-reviews.php` |
 | add_action | `'rest_api_init'` | `includes/class-rest-controller.php` |
 | add_action | `self::HOOK` | `includes/class-cron.php` |
+| add_filter | `'plugin_action_links_' . \plugin_basename( FILE` | `includes/admin/class-admin.php` |
 | apply_filters | `'isurev_providers'` | `includes/providers/class-provider-registry.php` |
 | apply_filters | `'isurev_self_updates_enabled'` | `includes/class-update-checker.php` |
 | apply_filters | `'isurev_template_dirs'` | `includes/class-templates.php` |

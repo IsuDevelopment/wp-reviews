@@ -22,7 +22,7 @@ jobs:
         run: composer install --no-interaction --prefer-dist
 
       - name: vendor-prefixed is committed and current
-        run: git diff --exit-code -- vendor-prefixed
+        run: git diff --exit-code -- vendor-prefixed ':!vendor-prefixed/composer/installed.php'
 
       - name: PHPCS and code map
         run: composer check

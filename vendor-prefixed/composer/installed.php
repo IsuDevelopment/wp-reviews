@@ -2,9 +2,9 @@
   'root' => 
   array (
     'name' => 'isudev/reviews',
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
-    'reference' => NULL,
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
+    'reference' => 'a5e274b3839a3b9c18c62eb01431691fc7241385',
     'type' => 'wordpress-plugin',
     'install_path' => __DIR__ . '/../',
     'aliases' => 
@@ -16,9 +16,9 @@
   array (
     'isudev/plugin-sdk' => 
     array (
-      'pretty_version' => '0.1.0',
-      'version' => '0.1.0.0',
-      'reference' => '88d5b79fdd14f4ac17b4d603c188fe989fb8804a',
+      'pretty_version' => 'v0.1.1',
+      'version' => '0.1.1.0',
+      'reference' => '55993a6fb83f20680f840ebdac64ffbd91fe3dfc',
       'type' => 'library',
       'install_path' => __DIR__ . '/../isudev/plugin-sdk',
       'aliases' => 

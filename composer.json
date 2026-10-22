@@ -6,14 +6,8 @@
 	"license": "GPL-2.0-or-later",
 	"repositories": [
 		{
-			"type": "path",
-			"url": "../../isudev-plugin-sdk",
-			"options": {
-				"symlink": false,
-				"versions": {
-					"isudev/plugin-sdk": "0.1.0"
-				}
-			}
+			"type": "vcs",
+			"url": "https://github.com/IsuDevelopment/isudev-plugin-sdk.git"
 		}
 	],
 	"require": {

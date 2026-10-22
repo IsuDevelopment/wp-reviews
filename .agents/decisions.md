@@ -4,6 +4,13 @@ Newest first, append-only: a changed decision gets a new entry that says what it
 
 Format: `## YYYY-MM-DD: title`, then **Decision**, **Why**, **Decided by**, **Affects**.
 
+## 2026-10-22: SDK from its own public repo, CI on every push
+
+- **Decision:** `isudev/plugin-sdk` comes from `https://github.com/IsuDevelopment/isudev-plugin-sdk` (public, tags `vX.Y.Z`, dev files `export-ignore`d) instead of a local path repo. CI runs Composer (with Strauss), checks that `vendor-prefixed/` is committed and current, then phpcs, code map, ESLint, Stylelint and the build.
+- **Why:** a path repo only works on one machine; the SDK code ships inside the public plugin anyway.
+- **Decided by:** user.
+- **Affects:** `composer.json` `repositories`, `composer.lock`, `vendor-prefixed/`, `.github/workflows/ci.yml`.
+
 ## 2026-10-22: Public repo with GitHub releases and self-updates
 
 - **Decision:** the plugin lives in the public repo `IsuDevelopment/wp-reviews`; tags `vX.Y.Z` build a ZIP release (`release.yml`), and installs update themselves through Plugin Update Checker, as `isudev-consent` does. `vendor-prefixed/` is committed (CI cannot install the local SDK path repo). Version 0.2.0 is the first release.

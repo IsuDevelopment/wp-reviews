@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  check:
+    name: Lint, code map, build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2
+
+      # Also runs Strauss: a diff in vendor-prefixed/ means it was not committed after an SDK update.
+      - name: Composer install
+        run: composer install --no-interaction --prefer-dist
+
+      - name: vendor-prefixed is committed and current
+        run: git diff --exit-code -- vendor-prefixed
+
+      - name: PHPCS and code map
+        run: composer check
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: JS and CSS lint, build
+        run: |
+          npm ci
+          npm run lint:js
+          npm run lint:css
+          npm run build

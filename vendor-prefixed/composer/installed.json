@@ -2,12 +2,18 @@
     "packages": [
         {
             "name": "isudev/plugin-sdk",
-            "version": "0.1.0",
-            "version_normalized": "0.1.0.0",
+            "version": "v0.1.1",
+            "version_normalized": "0.1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/IsuDevelopment/isudev-plugin-sdk.git",
+                "reference": "55993a6fb83f20680f840ebdac64ffbd91fe3dfc"
+            },
             "dist": {
-                "type": "path",
-                "url": "../../isudev-plugin-sdk",
-                "reference": "88d5b79fdd14f4ac17b4d603c188fe989fb8804a"
+                "type": "zip",
+                "url": "https://api.github.com/repos/IsuDevelopment/isudev-plugin-sdk/zipball/55993a6fb83f20680f840ebdac64ffbd91fe3dfc",
+                "reference": "55993a6fb83f20680f840ebdac64ffbd91fe3dfc",
+                "shasum": ""
             },
             "require": {
                 "php": ">=8.2"
@@ -16,6 +22,7 @@
                 "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
                 "wp-coding-standards/wpcs": "^3.4.1"
             },
+            "time": "2026-10-22T07:00:43+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -35,9 +42,9 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Shared cloud plumbing for isuDev WordPress plugins: API client, site registration, license cache, site-verify route and WP-CLI subcommands. Install prefixed with Strauss.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
+            "support": {
+                "source": "https://github.com/IsuDevelopment/isudev-plugin-sdk/tree/v0.1.1",
+                "issues": "https://github.com/IsuDevelopment/isudev-plugin-sdk/issues"
             },
             "install-path": "../isudev/plugin-sdk"
         },

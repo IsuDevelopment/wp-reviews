@@ -5,7 +5,8 @@
 1. Bump the version in `isudev-reviews.php` (header and `const VERSION`), `readme.txt` (`Stable tag` + a `= X.Y.Z =` changelog section) and `package.json`.
 2. `composer check`, `npm run build`, commit to `main`, push.
 3. `git tag vX.Y.Z && git push origin vX.Y.Z` (or run the workflow by hand). `.github/workflows/release.yml` validates the versions, builds the block, zips the `package.json` `files` list as `isudev-reviews-X.Y.Z.zip` and creates the GitHub release with the changelog.
-4. Sites with the plugin installed from a ZIP see the update in Dashboard → Updates within 12 h (Plugin Update Checker, `Update_Checker`). It is skipped in a git checkout (the `.local` symlink), on Composer-managed sites, with `ISUREV_DISABLE_SELF_UPDATES` or the `isurev_self_updates_enabled` filter.
+4. To check an update by hand on the test site: an `eval-file` that builds the checker (`PucFactory::buildUpdateChecker( Update_Checker::REPOSITORY_URL, … )`, `enableReleaseAssets()`), `checkForUpdates()`, then `Plugin_Upgrader->upgrade( 'isudev-reviews/isudev-reviews.php' )` and `wp plugin activate isudev-reviews` (the upgrader leaves it inactive; the dashboard reactivates it). Plain `wp plugin update` does not see the update, because the checker only registers in admin and cron requests.
+5. Sites with the plugin installed from a ZIP see the update in Dashboard → Updates within 12 h (Plugin Update Checker, `Update_Checker`). It is skipped in a git checkout (the `.local` symlink), on Composer-managed sites, with `ISUREV_DISABLE_SELF_UPDATES` or the `isurev_self_updates_enabled` filter.
 
 ## Local development
 

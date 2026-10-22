@@ -4,6 +4,13 @@ Newest first, append-only: a changed decision gets a new entry that says what it
 
 Format: `## YYYY-MM-DD: title`, then **Decision**, **Why**, **Decided by**, **Affects**.
 
+## 2026-10-22: Free import is 8 reviews (0.3.0)
+
+- **Decision:** `Cloud_Provider::FREE_LIMIT` 18 → 8, matching the platform's new free tier (8 reviews, 4 fresh imports per 30 days, 7-day cache, cache hits free). Replaces the 18-review entry below.
+- **Why:** about 90% of users will be free; one SerpApi search per import keeps the cost near zero, and Pro sells on auto-sync and history.
+- **Decided by:** user.
+- **Affects:** `class-cloud-provider.php`, readme, version 0.3.0.
+
 ## 2026-10-22: SDK from its own public repo, CI on every push
 
 - **Decision:** `isudev/plugin-sdk` comes from `https://github.com/IsuDevelopment/isudev-plugin-sdk` (public, tags `vX.Y.Z`, dev files `export-ignore`d) instead of a local path repo. CI runs Composer (with Strauss), checks that `vendor-prefixed/` is committed and current, then phpcs, code map, ESLint, Stylelint and the build.

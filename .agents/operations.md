@@ -64,14 +64,14 @@ SDK errors are `isurev_api_<code>` where `<code>` is the platform's error code. 
 | `site_verification_failed` (HTTP n) | The platform reached the site but `site-verify` did not answer `{"ok":true}`: plugin inactive, REST blocked (security plugin, basic auth, maintenance), redirect to another host | Check `curl '{site}/?rest_route=/isudev-reviews/v1/site-verify&nonce=x'` returns JSON `{"ok":false}`; then `wp isurev register` |
 | `site_token_required` / `invalid_site_token` | No token or the platform forgot it | The client re-registers once by itself; else `wp isurev register` |
 | `site_blocked` | Admin blocked the host on the platform | Platform: `bin/remote live site:block <host> --unblock` (user's OK) |
-| `rate_limited` | Free: 5 fetches per site per day or 30 per server IP per day; paid: plan's `fetch_per_day` | Wait, or Pro. Repeats within the cache window are cheap but still count |
+| `rate_limited` | Free: 4 fresh imports per site per 30 days (message points to Pro) or 30 per server IP per day; paid: plan's `fetch_per_day` | Wait (rolling 30 days), or Pro. Repeats of the same place within 7 days come from the cache and use no quota |
 | `pro_required` | Facebook without Pro | License with `facebook` |
 | `not_configured` (503) | Platform runs the live adapter without the provider key | Platform `.env` (user) |
 | `upstream_error` (502) | SerpApi/Graph failed (wrong place ID, quota used up, outage) | Check the place ID; `bin/remote live health` for SerpApi searches left |
 | `isurev_api_invalid` "Unexpected response (HTTP n)" | Non-JSON answer: wrong `api_url`, proxy, server error page | Check `api_url`; `curl -s {api_url}/v1/plans` should be JSON |
 | `isurev_register_failed` | Registration answered without a token | Platform logs: `bin/remote live logs` |
 | `isurev_pro_required` | Facebook source without the feature (plugin-side check) | License |
-| Source synced but no new reviews | Free re-fetches the newest 18 and dedupes; `cached: true` within 72 h | Expected |
+| Source synced but no new reviews | Free re-fetches the newest 8 and dedupes; `cached: true` within 7 days | Expected |
 | Block shows nothing | All reviews hidden, `minRating` too high, `withText` filter, wrong `sourceIds`, or `build/` missing | Check attributes; `npm run build` |
 | Pro template renders as Classic | No `pro_templates` feature | Expected without Pro (`Templates::resolve`) |
 | Cron never syncs | No `auto_sync`, interval `off`, or WP-Cron disabled | `wp cron event list`, `wp isurev sources` (interval) |

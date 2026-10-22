@@ -2,7 +2,7 @@
 
 Repo: https://github.com/IsuDevelopment/wp-reviews (public, branch `main`). Releases are GitHub releases; installed copies update themselves from them.
 
-Google (and, with Pro, Facebook) reviews stored in the site's own tables and shown with the `isudev-reviews/reviews` block. Reviews come from the isuDev cloud API (`papi.isudev.com`, repo `isudev-platform`) or, as a fallback, from the site owner's own Google Places key. Free: quick manual import of the 18 newest Google reviews. **Demo data** (30 sample reviews, no API) for local sites. Pro: full history, auto-sync, Facebook, Pro templates, several sources.
+Google (and, with Pro, Facebook) reviews stored in the site's own tables and shown with the `isudev-reviews/reviews` block. Reviews come from the isuDev cloud API (`papi.isudev.com`, repo `isudev-platform`) or, as a fallback, from the site owner's own Google Places key. Free: quick manual import of the 8 newest Google reviews (4 fresh imports per 30 days per site). **Demo data** (30 sample reviews, no API) for local sites. Pro: full history, auto-sync, Facebook, Pro templates, several sources.
 
 This file is the entry point for **every agent** (Claude Code reads it through `CLAUDE.md`). Everything else lives in [`.agents/`](.agents/README.md).
 

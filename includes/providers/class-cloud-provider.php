@@ -14,11 +14,11 @@ use IsuDev\Reviews\Plugin;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Fetches through the isuDev Reviews API. Free tier: Google, 18 newest (server-side limit; the API caches a place for 72 h). Pro: full history, Facebook.
+ * Fetches through the isuDev Reviews API. Free tier: Google, 8 newest, 4 fresh imports per 30 days (server-side limits; repeats within 7 days come from the API cache and are free). Pro: full history, Facebook.
  */
 final class Cloud_Provider implements Provider {
 
-	const FREE_LIMIT = 18;
+	const FREE_LIMIT = 8;
 
 	/**
 	 * {@inheritDoc}

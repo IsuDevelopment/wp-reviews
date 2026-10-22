@@ -31,8 +31,8 @@ So the site must be **reachable from the internet** (no `.local`, no basic auth 
 ### Sync (`Sync_Service::sync`)
 
 1. Source → provider (`cloud` by default) → `is_available()` (Facebook needs Pro).
-2. `fetch()` with `limit` (free `Cloud_Provider::FREE_LIMIT` = 18, Pro `PRO_LIMIT` = 1000), `since` (Pro only, after the first full import = `backfilled_at`), `language` (setting, default from locale).
-3. Cloud: `POST /reviews/v1/fetch`. The server enforces the real limits (free 18 reviews, 5 fetches/site/day, 30/IP/day; Pro per plan) and **caches** a place for 72 h (free) or 6 h (paid); the response has `cached` and `fetched_at`.
+2. `fetch()` with `limit` (free `Cloud_Provider::FREE_LIMIT` = 8, Pro `PRO_LIMIT` = 1000), `since` (Pro only, after the first full import = `backfilled_at`), `language` (setting, default from locale).
+3. Cloud: `POST /reviews/v1/fetch`. The server enforces the real limits (free 8 reviews, 4 fresh imports per site per 30 days, 30 per server IP per day; Pro per plan) and **caches** a place for 7 days (free) or 6 h (paid). Cache hits use no quota; the response has `cached` and `fetched_at`.
 4. `Review_Repository::upsert_many()` (unique `source_id + external_id`, keeps `is_hidden`/`is_pinned`), then source meta (`name`, `url`, `rating_avg`, `rating_count`, `last_status`, `last_error`), then `do_action( 'isurev_synced' )`.
 5. Errors are stored on the source (`last_status = error`, `last_error`) and returned as `WP_Error`. SDK errors are `isurev_api_<api error code>` (see `operations.md`).
 

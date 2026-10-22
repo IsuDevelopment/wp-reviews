@@ -24,7 +24,10 @@
 		"allow-plugins": {
 			"dealerdirect/phpcodesniffer-composer-installer": true
 		},
-		"sort-packages": true
+		"sort-packages": true,
+		"platform": {
+			"php": "8.2.0"
+		}
 	},
 	"extra": {
 		"installer-name": "isudev-reviews",
